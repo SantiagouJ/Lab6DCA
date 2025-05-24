@@ -44,38 +44,51 @@ customElements.define('app-root', class extends HTMLElement {
                 :host {
                     display: block;
                     min-height: 100vh;
-                    background: #f0f2f5;
-                    font-family: Arial, sans-serif;
+                    background: #121212;
+                    font-family: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
                 }
                 .header {
-                    background: white;
-                    padding: 1rem;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    background: #000000;
+                    padding: 1rem 2rem;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+                    position: sticky;
+                    top: 0;
+                    z-index: 100;
                 }
                 .user-info {
                     display: flex;
                     align-items: center;
                     gap: 1rem;
+                    color: #FFFFFF;
+                    font-weight: 500;
                 }
                 .sign-out-btn {
-                    padding: 8px 16px;
-                    background: #ff4444;
-                    color: white;
+                    padding: 0.75rem 1.5rem;
+                    background: #1DB954;
+                    color: #000000;
                     border: none;
-                    border-radius: 4px;
+                    border-radius: 500px;
                     cursor: pointer;
+                    font-weight: 700;
+                    font-size: 0.875rem;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    transition: all 0.2s ease;
                 }
                 .sign-out-btn:hover {
-                    background: #cc0000;
+                    background: #1ed760;
+                    transform: scale(1.04);
+                }
+                .sign-out-btn:active {
+                    transform: scale(0.98);
                 }
             </style>
             ${user ? `
                 <div class="header">
                     <div class="user-info">
-                        <span>Welcome, ${user.email}</span>
                     </div>
                     <button class="sign-out-btn" id="signOutBtn">Sign Out</button>
                 </div>

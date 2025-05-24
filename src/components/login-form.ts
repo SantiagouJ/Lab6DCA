@@ -127,15 +127,19 @@ export class LoginForm extends HTMLElement {
                     justify-content: center;
                 }
                 .auth-container {
-                    background: white;
+                    background: #181818;
                     padding: 2.5rem;
-                    border-radius: 1rem;
-                    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+                    border-radius: 8px;
+                    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
                     width: 100%;
+                    transition: background-color 0.3s ease;
+                }
+                .auth-container:hover {
+                    background: #282828;
                 }
                 h2 {
                     text-align: center;
-                    color: #111827;
+                    color: #FFFFFF;
                     margin: 0 0 0.75rem;
                     font-size: 1.75rem;
                     font-weight: 700;
@@ -147,40 +151,41 @@ export class LoginForm extends HTMLElement {
                 label {
                     display: block;
                     margin-bottom: 0.5rem;
-                    color: #374151;
+                    color: #FFFFFF;
                     font-size: 0.875rem;
                     font-weight: 600;
                 }
                 input {
                     width: 100%;
                     padding: 0.75rem 1rem;
-                    border: 1px solid #d1d5db;
-                    border-radius: 0.5rem;
+                    border: none;
+                    border-radius: 500px;
                     font-size: 0.9375rem;
                     transition: all 0.2s ease;
-                    background: #f9fafb;
-                    color: #111827;
+                    background: #3E3E3E;
+                    color: #FFFFFF;
                     box-sizing: border-box;
                 }
                 input::placeholder {
-                    color: #9ca3af;
+                    color: #B3B3B3;
                 }
                 input:focus {
                     outline: none;
-                    border-color: #3b82f6;
-                    background: white;
-                    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+                    background: #404040;
+                    box-shadow: 0 0 0 2px #1DB954;
                 }
                 button[type="submit"] {
                     width: 100%;
                     padding: 0.875rem 1.5rem;
-                    background: #3b82f6;
-                    color: white;
+                    background: #1DB954;
+                    color: #000000;
                     border: none;
-                    border-radius: 0.5rem;
+                    border-radius: 500px;
                     cursor: pointer;
-                    font-size: 0.9375rem;
-                    font-weight: 600;
+                    font-size: 0.875rem;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
                     transition: all 0.2s ease;
                     display: flex;
                     align-items: center;
@@ -190,27 +195,24 @@ export class LoginForm extends HTMLElement {
                     box-sizing: border-box;
                 }
                 button[type="submit"]:hover:not(:disabled) {
-                    background: #2563eb;
-                    transform: translateY(-1px);
-                    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+                    background: #1ed760;
+                    transform: scale(1.04);
                 }
                 button[type="submit"]:active:not(:disabled) {
-                    transform: translateY(0);
-                    box-shadow: none;
+                    transform: scale(0.98);
                 }
                 button[type="submit"]:disabled {
                     opacity: 0.7;
                     cursor: not-allowed;
                     transform: none;
-                    box-shadow: none;
                 }
                 .toggle-btn {
                     width: 100%;
                     padding: 0.875rem 1.5rem;
                     background: transparent;
-                    color: #4b5563;
-                    border: 1px solid #e5e7eb;
-                    border-radius: 0.5rem;
+                    color: #B3B3B3;
+                    border: 1px solid #404040;
+                    border-radius: 500px;
                     cursor: pointer;
                     font-size: 0.875rem;
                     font-weight: 500;
@@ -219,18 +221,17 @@ export class LoginForm extends HTMLElement {
                     box-sizing: border-box;
                 }
                 .toggle-btn:hover {
-                    background: #f9fafb;
-                    border-color: #d1d5db;
-                    color: #111827;
+                    background: #282828;
+                    border-color: #B3B3B3;
+                    color: #FFFFFF;
                 }
                 .error-message {
-                    color: #dc2626;
+                    color: #FFFFFF;
                     text-align: center;
                     margin-top: 1rem;
                     padding: 0.75rem;
-                    background: #fee2e2;
-                    border: 1px solid #fecaca;
-                    border-radius: 0.5rem;
+                    background: #E91429;
+                    border-radius: 500px;
                     font-size: 0.875rem;
                     font-weight: 500;
                     display: none;
@@ -244,18 +245,17 @@ export class LoginForm extends HTMLElement {
                     width: 18px;
                     height: 18px;
                     animation: spin 1s linear infinite;
+                    border: 2px solid #FFFFFF;
+                    border-top-color: transparent;
+                    border-radius: 50%;
                 }
                 @keyframes spin {
-                    from {
-                        transform: rotate(0deg);
-                    }
-                    to {
-                        transform: rotate(360deg);
-                    }
+                    from { transform: rotate(0deg); }
+                    to { transform: rotate(360deg); }
                 }
                 .welcome-text {
                     text-align: center;
-                    color: #6b7280;
+                    color: #B3B3B3;
                     margin: 0 0 2rem;
                     font-size: 0.9375rem;
                     line-height: 1.5;
@@ -265,14 +265,14 @@ export class LoginForm extends HTMLElement {
                     align-items: center;
                     text-align: center;
                     margin: 1.5rem 0;
-                    color: #9ca3af;
+                    color: #B3B3B3;
                     font-size: 0.875rem;
                 }
                 .divider::before,
                 .divider::after {
                     content: '';
                     flex: 1;
-                    border-bottom: 1px solid #e5e7eb;
+                    border-bottom: 1px solid #404040;
                 }
                 .divider::before {
                     margin-right: 1rem;
@@ -293,12 +293,12 @@ export class LoginForm extends HTMLElement {
                     }
                 }
                 input.error {
-                    border-color: #dc2626;
-                    background: #fef2f2;
+                    border: none;
+                    background: #E91429;
                     animation: shake 0.5s ease;
                 }
                 input.error:focus {
-                    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+                    box-shadow: 0 0 0 2px #E91429;
                 }
                 @keyframes shake {
                     0%, 100% { transform: translateX(0); }
@@ -310,7 +310,7 @@ export class LoginForm extends HTMLElement {
                 }
             </style>
             <div class="auth-container">
-                <h2>${this.isLogin ? 'Welcome Back' : 'Create Account'}</h2>
+                <h2>${this.isLogin ? 'Sign In' : 'Sign Up'}</h2>
                 <p class="welcome-text">
                     ${this.isLogin 
                         ? 'Sign in to manage your tasks and stay organized'

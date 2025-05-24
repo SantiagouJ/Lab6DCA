@@ -35,50 +35,46 @@ export class TodoItem extends HTMLElement {
                     display: flex;
                     align-items: center;
                     padding: 1rem 1.5rem;
-                    background: #f8fafc;
-                    border: 2px solid #e2e8f0;
-                    border-radius: 12px;
+                    background: #282828;
+                    border-radius: 8px;
                     transition: all 0.2s ease;
+                    border: 1px solid transparent;
                 }
                 .todo-item:hover {
-                    background: white;
-                    border-color: #3b82f6;
-                    transform: translateY(-1px);
-                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+                    background: #383838;
+                    border-color: #404040;
                 }
                 .todo-text {
                     flex-grow: 1;
                     margin: 0 1rem;
                     font-size: 1rem;
-                    color: #1a1a1a;
+                    color: #FFFFFF;
                     text-decoration: ${this.task.completed ? 'line-through' : 'none'};
-                    opacity: ${this.task.completed ? '0.6' : '1'};
+                    opacity: ${this.task.completed ? '0.5' : '1'};
+                    transition: all 0.2s ease;
                 }
                 .delete-btn {
                     padding: 0.5rem;
                     border: none;
-                    border-radius: 8px;
+                    border-radius: 500px;
                     cursor: pointer;
                     background: transparent;
-                    color: #ef4444;
+                    color: #B3B3B3;
                     transition: all 0.2s ease;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                 }
                 .delete-btn:hover {
-                    background: #fee2e2;
+                    background: #404040;
+                    color: #FFFFFF;
                 }
                 .checkbox {
                     width: 20px;
                     height: 20px;
                     cursor: pointer;
-                    accent-color: #3b82f6;
-                }
-                .date {
-                    font-size: 0.875rem;
-                    color: #64748b;
-                    margin-right: 1rem;
+                    accent-color: #1DB954;
+                    border-radius: 50%;
                 }
                 .delete-icon {
                     width: 20px;

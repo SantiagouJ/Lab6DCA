@@ -57,75 +57,85 @@ export class TodoList extends HTMLElement {
                     display: block;
                     max-width: 800px;
                     margin: 2rem auto;
-                    padding: 0 20px;
-                    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+                    padding: 0 2rem;
+                    font-family: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
                 }
                 .container {
-                    background: white;
-                    border-radius: 16px;
-                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+                    background: #181818;
+                    border-radius: 8px;
+                    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
                     padding: 2rem;
+                    transition: background-color 0.3s ease;
+                }
+                .container:hover {
+                    background: #282828;
                 }
                 h1 {
-                    color: #1a1a1a;
+                    color: #FFFFFF;
                     text-align: center;
                     margin-bottom: 2rem;
                     font-size: 2rem;
-                    font-weight: 600;
+                    font-weight: 700;
+                    letter-spacing: -0.5px;
                 }
                 .todo-form {
                     display: flex;
-                    gap: 12px;
+                    gap: 1rem;
                     margin-bottom: 2rem;
                     position: relative;
                 }
                 input[type="text"] {
                     flex-grow: 1;
                     padding: 1rem 1.5rem;
-                    border: 2px solid #e2e8f0;
-                    border-radius: 12px;
+                    border: none;
+                    border-radius: 500px;
                     font-size: 1rem;
                     transition: all 0.2s ease;
-                    background: #f8fafc;
+                    background: #3E3E3E;
+                    color: #FFFFFF;
+                }
+                input[type="text"]::placeholder {
+                    color: #B3B3B3;
                 }
                 input[type="text"]:focus {
                     outline: none;
-                    border-color: #3b82f6;
-                    background: white;
-                    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+                    background: #404040;
+                    box-shadow: 0 0 0 2px #1DB954;
                 }
                 button {
                     padding: 1rem 2rem;
-                    background: #3b82f6;
-                    color: white;
+                    background: #1DB954;
+                    color: #000000;
                     border: none;
-                    border-radius: 12px;
+                    border-radius: 500px;
                     cursor: pointer;
-                    font-size: 1rem;
-                    font-weight: 500;
+                    font-size: 0.875rem;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
                     transition: all 0.2s ease;
                     display: flex;
                     align-items: center;
-                    gap: 8px;
+                    gap: 0.5rem;
                 }
                 button:hover {
-                    background: #2563eb;
-                    transform: translateY(-1px);
+                    background: #1ed760;
+                    transform: scale(1.04);
                 }
                 button:active {
-                    transform: translateY(0);
+                    transform: scale(0.98);
                 }
                 .todo-list {
                     display: flex;
                     flex-direction: column;
-                    gap: 12px;
+                    gap: 0.75rem;
                 }
                 .empty-state {
                     text-align: center;
-                    color: #64748b;
+                    color: #B3B3B3;
                     padding: 3rem 1rem;
-                    background: #f8fafc;
-                    border-radius: 12px;
+                    background: #282828;
+                    border-radius: 8px;
                     font-size: 1.1rem;
                 }
                 .stats {
@@ -133,9 +143,9 @@ export class TodoList extends HTMLElement {
                     justify-content: space-between;
                     margin-top: 2rem;
                     padding-top: 1rem;
-                    border-top: 2px solid #e2e8f0;
-                    color: #64748b;
-                    font-size: 0.9rem;
+                    border-top: 1px solid #404040;
+                    color: #B3B3B3;
+                    font-size: 0.875rem;
                 }
                 .add-icon {
                     width: 20px;
@@ -167,10 +177,7 @@ export class TodoList extends HTMLElement {
                             </todo-item>
                         `).join('')}
                 </div>
-                <div class="stats">
-                    <span>${this.tasks.length} total tasks</span>
-                    <span>${this.tasks.filter(t => t.completed).length} completed</span>
-                </div>
+                
             </div>
         `;
 
